@@ -1,38 +1,131 @@
+/* Reset and base styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f2f4f8;
+}
+
+/* App container */
 .App {
+  max-width: 480px;
+  margin: 50px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Heading */
+.App h2 {
   text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 1.8rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Input group */
+.input-group,
+.options,
+.output {
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.input-group label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #555;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-group input[type="number"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.input-group input[type="number"]:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+/* Checkboxes */
+.options label {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 10px;
+  color: #444;
+  font-weight: 500;
 }
 
-.App-link {
-  color: #61dafb;
+.options input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: #4f46e5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Button */
+button {
+  display: inline-block;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 5px;
+}
+
+button:hover {
+  background: #4338ca;
+}
+
+/* Password display */
+.output input[type="text"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-top: 8px;
+  background: #f9fafb;
+}
+
+/* Copy success message */
+.copy-success {
+  color: #22c55e;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  animation: fade 2s forwards;
+}
+
+/* Fade animation for copy message */
+@keyframes fade {
+  0% {
+    opacity: 1;
   }
-  to {
-    transform: rotate(360deg);
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media screen and (max-width: 540px) {
+  .App {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  .App h2 {
+    font-size: 1.5rem;
   }
 }
